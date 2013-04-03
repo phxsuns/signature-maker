@@ -1,3 +1,17 @@
 body{
 	font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+.padding10{
+	padding: 10px;
+}
+
+#fileFace{
+	position: absolute;
+	left:-999px;
+	top:-999px;
+}
+#imgFace{
+	width: 60px;
+	height: 60px;
+}
