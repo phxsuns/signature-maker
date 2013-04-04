@@ -1,9 +1,9 @@
-body{
+body,button,input,select{
 	font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.padding10{
-	padding: 10px;
+#makerbox .row{
+	padding: 10px 0;
 }
 
 #fileFace{
@@ -11,7 +11,25 @@ body{
 	left:-999px;
 	top:-999px;
 }
+#rname{
+	width: 100px;
+}
+#fname{
+	width: 50px;
+}
+
+
 #imgFace{
 	width: 60px;
 	height: 60px;
+}
+
+#department{
+	width: 300px;
+}
+#tel{
+	width: 150px;
+}
+#telsub{
+	width: 100px;
 }

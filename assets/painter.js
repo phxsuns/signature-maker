@@ -2,7 +2,7 @@
  * Painter 
  * version 0.1.0 
  * Xhao Sun <sunxuhao@gmail.com> 
- * 2013-04-02 10:34:51
+ * 2013-04-05 12:35:48
  */
 
 (function(){
@@ -360,6 +360,10 @@ painter.prototype = {
 		if(!type) return this;
 		this.eventList[type] = [];
 		return this;
+	},
+
+	init: function(){
+		this.layerList = [];
 	},
 
 	_doEvent: function(type){
