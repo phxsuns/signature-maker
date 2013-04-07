@@ -37,7 +37,8 @@
 			//获取名字
 			var rname = $('#rname').val();
 			var fname = $('#fname').val();
-			var name = rname+'（'+fname+'）';
+			var name = rname;
+			name += fname ? '（'+fname+'）' : '';
 
 			//获取部门
 			var department = $('#department').val();

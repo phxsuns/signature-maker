@@ -25,11 +25,11 @@
 			</div>
 			<div class="row">
 				<div class="span2">
-					Step2.选择头像
+					Step2.设置照片
 				</div>
 				<div class="span10">		
 					<img src="assets/face-default.png" id="imgFace">
-					<button class="btn" type="button" id="selectFace">选择头像</button>
+					<button class="btn" type="button" id="selectFace">选择照片</utton>
 				</div>
 			</div>
 			<div class="row">
