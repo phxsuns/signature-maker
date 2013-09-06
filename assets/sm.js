@@ -16,6 +16,22 @@
 		painterSM.add('Text',{text:'网址：www.alibado.com',color:'#888888'},{x:350,y:100},1);
 		painterSM.draw();
 		
+	};
+	
+	var croper = {
+		init: function(){
+			xx = $('#imgPhoto').imgAreaSelect({
+				handles: true,
+				instance: true,
+				onSelectEnd: function(x){
+					console.log(x);
+				}
+			});
+			//$('#imgPhoto').imgAreaSelect({ aspectRatio: '1:1', handles: true, fadeSpeed: 200, onSelectChange: preview });
+		},
+		show: function(){
+			
+		}
 	}
 
 	$(function(){
@@ -68,7 +84,9 @@
 				$('#imgFace')[0].src = this.result;
 			}
 		});
-
+		
+		croper.init();//裁剪初始化
+		
 	});
 
 })(jQuery)
