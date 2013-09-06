@@ -39,15 +39,15 @@
 				</div>
 				<div class="span10">		
 					<select id="department">
-						<option>阿里学院</option>
-						<option>阿里学院-在线培训中心</option>
-						<option>阿里学院-在线培训中心-点播课程</option>
-						<option>阿里学院-在线培训中心-分享者社区</option>
-						<option>阿里学院-在线培训中心-淘工作</option>
-						<option>阿里学院-在线培训中心-直播访谈</option>
-						<option>阿里学院-在线培训中心-网站产品</option>
-						<option>阿里学院-在线培训中心-网站产品-PD</option>
-						<option>阿里学院-在线培训中心-网站产品-UED</option>
+						<option>淘宝大学</option>
+						<option>淘宝大学-在线培训中心</option>
+						<option>淘宝大学-在线培训中心-点播课程</option>
+						<option>淘宝大学-在线培训中心-分享者社区</option>
+						<option>淘宝大学-在线培训中心-淘工作</option>
+						<option>淘宝大学-在线培训中心-直播访谈</option>
+						<option>淘宝大学-在线培训中心-网站产品</option>
+						<option>淘宝大学-在线培训中心-网站产品-PD</option>
+						<option>淘宝大学-在线培训中心-网站产品-UED</option>
 					</select>
 				</div>
 			</div>
@@ -87,7 +87,11 @@
 				<h3>选取照片区域</h3>
 			</div>
 			<div class="modal-body">
-				<img src="http://gtms04.alicdn.com/tps/i4/T1aciIFhNeXXcCqLZP-760-290.jpg" id="imgPhoto" />
+				<div class="photobox">
+					<div class="photobg">
+						<img src="" id="imgPhoto">
+					</div>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<a href="#" class="btn btn-primary" id="imgSelectOk">确定</a>
@@ -96,6 +100,6 @@
 		</div>
 		
 		<div id="smbox" style="display:none;"></div>
-		<input type="file" id="fileFace" style="visibility: hidden;" accept="image/*">
+		<form id="fileForm"><input type="file" id="fileFace" style="visibility: hidden;" accept="image/*"></form>
 	</body>
 </html>

@@ -19,20 +19,78 @@
 	};
 	
 	var croper = {
+		data: {},
 		init: function(){
-			xx = $('#imgPhoto').imgAreaSelect({
+			var me = this;
+			//裁剪插件
+			var ias = $('#imgPhoto').imgAreaSelect({
 				handles: true,
 				instance: true,
-				onSelectEnd: function(x){
-					console.log(x);
+				aspectRatio: '1:1',
+				fadeSpeed: 100,
+				minHeight: 60,
+				minWidth: 60,
+				x1: 0,
+				y1: 0,
+				x2: 60,
+				y2: 60,
+				hide: true,
+				onSelectEnd: function(o,d){
+					//console.log(d);
+					me.data.result = d;
 				}
 			});
-			//$('#imgPhoto').imgAreaSelect({ aspectRatio: '1:1', handles: true, fadeSpeed: 200, onSelectChange: preview });
+			this.data.ias = ias;
+			this.data.result = {'x1':0,'y1':0,'x2':60,'y2':60,'width':60,'height':60};
+
+			//弹出框插件
+			var pop = $('#pop');
+			var mask = $('#mask');
+			pop.find('.h-close').bind('click',function(e){
+				e.preventDefault();
+				mask.fadeOut();
+				pop.fadeOut();
+				ias.setOptions({hide:1});
+			});
+
+			$('#imgSelectOk').bind('click',function(e){
+				e.preventDefault();
+				var result = me.data.result;
+				var imgsrc = me.crop(result.x1,result.y1,result.width,result.height);
+				mask.fadeOut();
+				pop.fadeOut();
+				if(imgsrc) $('#imgFace')[0].src = imgsrc;
+				ias.setOptions({hide:1});
+			});
+
+			return ias;
 		},
-		show: function(){
-			
+		show: function(img){
+			var ias = this.data.ias;
+			if(!ias) ias = this.init();//第一次显示作初始化
+			var pop = $('#pop');
+			var mask = $('#mask');
+			pop.fadeIn();
+			mask.fadeIn();
+			var photo = $('#imgPhoto')[0];
+			photo.src = img.src;
+			photo.onload = function(){
+				ias.setOptions({show:1,imageHeight:img.height,imageWidth:img.width});
+			}
+			this.data.img = img;
+		},
+		crop: function(x,y,w,h){
+			//裁剪
+			var img = this.data.img;
+			if(!img) return null;
+			var c = document.createElement('canvas');
+			var ctx = c.getContext('2d');
+			c.width = 60;
+			c.height = 60;
+			ctx.drawImage(img,x,y,w,h,0,0,60,60);
+			return c.toDataURL();
 		}
-	}
+	};
 
 	$(function(){
 
@@ -81,11 +139,15 @@
 			var reader = new FileReader();
 			reader.readAsDataURL(file);
 			reader.onload = function(e){
-				$('#imgFace')[0].src = this.result;
+				//$('#imgFace')[0].src = this.result;
+				var img = new Image();
+				img.src = this.result;
+				img.onload = function(){
+					croper.show(img);
+				}
 			}
+			$('#fileForm')[0].reset();
 		});
-		
-		croper.init();//裁剪初始化
 		
 	});
 
