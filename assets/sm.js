@@ -56,11 +56,13 @@
 			$('#imgSelectOk').bind('click',function(e){
 				e.preventDefault();
 				var result = me.data.result;
-				var imgsrc = me.crop(result.x1,result.y1,result.width,result.height);
-				mask.fadeOut();
-				pop.fadeOut();
-				if(imgsrc) $('#imgFace')[0].src = imgsrc;
-				ias.setOptions({hide:1});
+				me.crop(result.x1,result.y1,result.width,result.height,function(data){
+					mask.fadeOut();
+					pop.fadeOut();
+					if(data) $('#imgFace')[0].src = data;
+					ias.setOptions({hide:1});
+				});
+				
 			});
 
 			return ias;
@@ -79,16 +81,24 @@
 			}
 			this.data.img = img;
 		},
-		crop: function(x,y,w,h){
+		crop: function(x,y,w,h,cb){
 			//裁剪
 			var img = this.data.img;
-			if(!img) return null;
-			var c = document.createElement('canvas');
-			var ctx = c.getContext('2d');
-			c.width = 60;
-			c.height = 60;
-			ctx.drawImage(img,x,y,w,h,0,0,60,60);
-			return c.toDataURL();
+			if(!img){
+				cb && cb('');
+			}
+			// var c = document.createElement('canvas');
+			// var ctx = c.getContext('2d');
+			// c.width = 60;
+			// c.height = 60;
+			// ctx.drawImage(img,x,y,w,h,0,0,60,60);	
+			// cb && cb(c.toDataURL());
+			var data = img.src;
+			var num = data.indexOf('base64,');
+			var code = data.substring(num+7);
+			$.post('cropper.php',{code:code,dw:60,dh:60,x:x,y:y,w:w,h:h},function(data){
+				cb && cb('data:image/jpeg;base64,'+data.code);
+			},'json');
 		}
 	};
 
