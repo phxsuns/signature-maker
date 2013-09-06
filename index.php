@@ -3,17 +3,18 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Signature-Maker</title>
-		<link type="text/css" rel="stylesheet" href="assets/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="assets/imageareaselect/css/imgareaselect-animated.css" />
 		<link type="text/css" rel="stylesheet" href="assets/sm.css">
 		<script src="assets/jquery.min.js"></script>
-		<script src="assets/bootstrap.min.js"></script>
+		<script src="assets/imageareaselect/js/jquery.imgareaselect.pack.js"></script>
 		<script src="assets/font.js"></script>
 		<script src="assets/painter.min.js"></script>
 		<script src="assets/sm.js"></script>
 	</head>
 	<body>
 		<div class="container" id="makerbox">
-			<h2>邮件签名生成工具</h2>
+			<h2>邮件签名生成</h2>
 			<div class="row">
 				<div class="span2">
 					Step1.您的名字
@@ -76,6 +77,21 @@
 				<div class="span12">
 					<div id="outbox"></div>
 				</div>
+			</div>
+		</div>
+		
+		<div id="mask" class="mask"></div>
+		<div id="pop" class="pop modal">
+			<div class="modal-header">
+				<button type="button" class="close h-close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3>选取照片区域</h3>
+			</div>
+			<div class="modal-body">
+				<img src="http://gtms04.alicdn.com/tps/i4/T1aciIFhNeXXcCqLZP-760-290.jpg" id="imgPhoto" />
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-primary" id="imgSelectOk">确定</a>
+				<a href="#" class="btn h-close">取消</a>
 			</div>
 		</div>
 		
