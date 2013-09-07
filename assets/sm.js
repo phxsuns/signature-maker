@@ -13,7 +13,7 @@
 		painterSM.add('Text',{text:info.telphone,color:'#888888'},{x:350,y:52},1);
 		painterSM.add('Text',{text:info.phone,color:'#888888'},{x:350,y:68},1);
 		painterSM.add('Text',{text:'地址：杭州市西湖区华星路96号瑞利大厦6楼',color:'#888888'},{x:350,y:84},1);
-		painterSM.add('Text',{text:'网址：www.alibado.com',color:'#888888'},{x:350,y:100},1);
+		painterSM.add('Text',{text:'网址：daxue.taobao.com',color:'#888888'},{x:350,y:100},1);
 		painterSM.draw();
 		
 	};
@@ -97,7 +97,7 @@
 			var num = data.indexOf('base64,');
 			var code = data.substring(num+7);
 			$.post('cropper.php',{code:code,dw:60,dh:60,x:x,y:y,w:w,h:h},function(data){
-				cb && cb('data:image/jpeg;base64,'+data.code);
+				cb && cb('data:image/png;base64,'+data.code);
 			},'json');
 		}
 	};
@@ -109,6 +109,7 @@
 
 		painterSM.on('drawComplete',function(){
 			$('#outbox').html('<img src="'+painterSM.canvas.toDataURL()+'">');
+			$('#down').show();
 		});
 		
 
@@ -138,6 +139,16 @@
 
 			//绘制
 			make({image:imgAvatar,name:name,department:department,telphone:telphone,phone:phone});
+
+		});
+
+		$('#down').click(function(){
+			var data = $('#outbox img')[0].src;
+			var num = data.indexOf('base64,');
+			var code = data.substring(num+7);
+			var form = $('#fileDown');
+			form.find('input[name=code]').val(code);
+			form.submit();
 		});
 
 		$('#selectFace').click(function(){

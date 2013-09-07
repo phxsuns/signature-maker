@@ -71,6 +71,7 @@
 			<div class="row">
 				<div class="span12">
 					<button class="btn btn-primary btn-large" type="button" id="make">生成签名</button>
+					<button class="btn btn-primary btn-large" type="button" id="down" style="display:none;">下载签名</button>
 				</div>
 			</div>
 			<div class="row">
@@ -100,6 +101,7 @@
 		</div>
 		
 		<div id="smbox" style="display:none;"></div>
-		<form id="fileForm"><input type="file" id="fileFace" style="visibility: hidden;" accept="image/*"></form>
+		<form id="fileForm" style="display:none"><input type="file" id="fileFace" style="visibility: hidden;" accept="image/*"></form>
+		<form id="fileDown" action="download.php" method="post" style="display:none"><input type="hidden" name="code"><input type="hidden" name="name" value="邮件签名图"></form>
 	</body>
 </html>
