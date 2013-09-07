@@ -1,3 +1,6 @@
+html{
+	overflow-y:scroll;
+}
 body,button,input,select{
 	font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -34,6 +37,16 @@ body,button,input,select{
 }
 #telsub{
 	width: 100px;
+}
+.control-group input,
+.control-group select{
+	margin-bottom: 0;
+}
+.control-group .help-inline{
+	display: none;
+}
+.control-group .show-inline{
+	display: inline-block;
 }
 
 .mask{

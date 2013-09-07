@@ -6,6 +6,7 @@
 		<link type="text/css" rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="assets/imageareaselect/css/imgareaselect-animated.css" />
 		<link type="text/css" rel="stylesheet" href="assets/sm.css">
+		<link type="text/css" rel="stylesheet" href="assets/loading.css">
 		<script src="assets/jquery.min.js"></script>
 		<script src="assets/imageareaselect/js/jquery.imgareaselect.pack.js"></script>
 		<script src="assets/font.js"></script>
@@ -15,68 +16,80 @@
 	<body>
 		<div class="container" id="makerbox">
 			<h2>邮件签名生成</h2>
-			<div class="row">
+			<div class="row step1">
 				<div class="span2">
 					Step1.您的名字
 				</div>
-				<div class="span10">		
+				<div class="span10 control-group">		
 					<input type="text" placeholder="真名" id="rname">
 					<input type="text" placeholder="花名" id="fname">
+					<span class="help-inline"></span>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row step2">
 				<div class="span2">
 					Step2.设置照片
 				</div>
-				<div class="span10">		
+				<div class="span10 control-group">		
 					<img src="assets/face-default.png" id="imgFace">
-					<button class="btn" type="button" id="selectFace">选择照片</utton>
+					<button class="btn" type="button" id="selectFace">选择照片</button>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row step3">
 				<div class="span2">
 					Step3.选择部门
 				</div>
-				<div class="span10">		
+				<div class="span10 control-group">		
 					<select id="department">
 						<option>淘宝大学</option>
-						<option>淘宝大学-在线培训中心</option>
-						<option>淘宝大学-在线培训中心-点播课程</option>
-						<option>淘宝大学-在线培训中心-分享者社区</option>
-						<option>淘宝大学-在线培训中心-淘工作</option>
-						<option>淘宝大学-在线培训中心-直播访谈</option>
-						<option>淘宝大学-在线培训中心-网站产品</option>
-						<option>淘宝大学-在线培训中心-网站产品-PD</option>
-						<option>淘宝大学-在线培训中心-网站产品-UED</option>
+						<option>淘宝大学-产品部</option>
+						<option>淘宝大学-大客户部</option>
+						<option>淘宝大学-渠道部</option>
+						<option>淘宝大学-运营部</option>
+						<option>淘宝大学-运营部-学员关系</option>
+						<option>淘宝大学-运营部-活动营销</option>
+						<option>淘宝大学-线上培训部</option>
+						<option>淘宝大学-线上培训部-点播课程</option>
+						<option>淘宝大学-线上培训部-直播课程</option>
+						<option>淘宝大学-线上培训部-淘工作</option>
+						<option>淘宝大学-线上培训部-网站产品</option>
+						<option>淘宝大学-线上培训部-用户体验</option>
 					</select>
+					<span class="help-inline"></span>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row step4">
 				<div class="span2">
 					Step4.填写座机
 				</div>
-				<div class="span10">		
-					<input type="text" placeholder="座机号码" id="tel">
+				<div class="span10 control-group">		
+					<input type="text" placeholder="座机号码（可不填）" id="tel">
 					<input type="text" placeholder="分机号码" id="telsub">
+					<span class="help-inline"></span>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row step5">
 				<div class="span2">
 					Step5.填写手机
 				</div>
-				<div class="span10">		
+				<div class="span10 control-group">		
 					<input type="text" placeholder="手机号码" id="phone">
+					<span class="help-inline"></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="span12">
 					<button class="btn btn-primary btn-large" type="button" id="make">生成签名</button>
-					<button class="btn btn-primary btn-large" type="button" id="down" style="display:none;">下载签名</button>
 				</div>
 			</div>
 			<div class="row">
 				<div class="span12">
 					<div id="outbox"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<button class="btn btn-info btn-large" type="button" id="down" style="display:none;">下载签名</button>
 				</div>
 			</div>
 		</div>
