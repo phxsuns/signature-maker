@@ -2,7 +2,7 @@
 
 	var fontZhonghei = new Font('assets/zhonghei.ttf','FZZH');
 	var fontZhunhei = new Font('assets/zhunhei.ttf','FZZHH');
-	var painterSM = new Painter('sm',{width:650,height:150});
+	var painterSM = new Painter('sm',{width:670,height:150});
 
 	var make = function(info){
 		
@@ -16,7 +16,7 @@
 		painterSM.add('Text',{text:info.name,color:'#5E6D81',size:22,bold:'',fontObj:fontZhonghei},{x:310,y:32},1);
 		
 		//部门
-		painterSM.add('Text',{text:info.department,color:'#9EA7B3',size:13,fontObj:fontZhunhei},{x:310,y:66},1);
+		painterSM.add('Text',{text:info.department,color:'#9EA7B3',size:13,fontObj:fontZhunhei},{x:310,y:62},1);
 		
 		//地址
 		painterSM.add('Text',{text:info.address,color:'#888888',size:11,fontObj:fontZhunhei},{x:310,y:89},1);
@@ -180,7 +180,7 @@
 			var tel = $('#tel').val();
 			var telsub = $('#telsub').val();
 			var telphone = '电话：'+tel;
-			telphone += telsub ? ' 分机'+telsub : '';
+			telphone += telsub ? '('+telsub+')' : '';
 			if(!tel) telphone = '';//若未填写，则不显示
 			else if(!tel.match(/^([0-9]|-)+$/) || (telsub && !telsub.match(/^[0-9]+$/))){
 				tips.show($('.step4'),'电话号码格式不正确');
@@ -205,7 +205,7 @@
 			var site = '网站：http://daxue.taobao.com'
 
 			//绘制
-			isOk = 1;//调试代码
+			//isOk = 1;//调试代码
 			if(isOk){
 				make({
 					image:imgAvatar,
