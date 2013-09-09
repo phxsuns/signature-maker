@@ -2,7 +2,7 @@
 
 	var fontZhonghei = new Font('assets/zhonghei.ttf','FZZH');
 	var fontZhunhei = new Font('assets/zhunhei.ttf','FZZHH');
-	var painterSM = new Painter('sm',{width:650,height:125});
+	var painterSM = new Painter('sm',{width:650,height:150});
 
 	var make = function(info){
 		
@@ -10,12 +10,25 @@
 		//背景
 		painterSM.add('Image',{src:'assets/bg-sign.png'},{x:0,y:0},0);
 		//头像
-		painterSM.add('Image',{image:info.image,width:60,height:60},{x:275,y:15},1);
+		painterSM.add('Image',{image:info.image,width:80,height:80},{x:206,y:23},1);
+		painterSM.add('Image',{src:'assets/face-mask.png',width:80,height:80},{x:206,y:23},2);//圆形遮罩
 		//姓名
-		painterSM.add('Text',{text:info.name,color:'#f36f21',size:14,bold:'',fontObj:fontZhonghei},{x:350,y:12},1);
+		painterSM.add('Text',{text:info.name,color:'#5E6D81',size:22,bold:'',fontObj:fontZhonghei},{x:310,y:32},1);
+		
+		//部门
+		painterSM.add('Text',{text:info.department,color:'#9EA7B3',size:13,fontObj:fontZhunhei},{x:310,y:66},1);
+		
+		//地址
+		painterSM.add('Text',{text:info.address,color:'#888888',size:11,fontObj:fontZhunhei},{x:310,y:89},1);
+		
+		//手机
+		painterSM.add('Text',{text:info.phone,color:'#888888',size:11,fontObj:fontZhunhei},{x:310,y:108},1);
+		
+		//座机
+		painterSM.add('Text',{text:info.telphone,color:'#888888',size:11,fontObj:fontZhunhei},{x:435,y:108},1);
 
 		//信息列表
-		var listY = [36,52,68,84,100];
+		/* var listY = [36,52,68,84,100];
 		var listColor = '#888888';
 		var listText = [info.department,info.telphone,info.phone,info.address,info.site];
 
@@ -25,7 +38,7 @@
 				painterSM.add('Text',{text:listText[i],color:listColor,fontObj:fontZhunhei,size:12},{x:350,y:listY[n]},1);
 				n++;
 			}
-		}
+		} */
 		// painterSM.add('Text',{text:info.department,color:'#888888'},{x:350,y:36},1);
 		// painterSM.add('Text',{text:info.telphone,color:'#888888'},{x:350,y:52},1);
 		// painterSM.add('Text',{text:info.phone,color:'#888888'},{x:350,y:68},1);
@@ -45,12 +58,12 @@
 				instance: true,
 				aspectRatio: '1:1',
 				fadeSpeed: 100,
-				minHeight: 60,
-				minWidth: 60,
+				minHeight: 80,
+				minWidth: 80,
 				x1: 0,
 				y1: 0,
-				x2: 60,
-				y2: 60,
+				x2: 80,
+				y2: 80,
 				hide: true,
 				onSelectEnd: function(o,d){
 					//console.log(d);
@@ -58,7 +71,7 @@
 				}
 			});
 			this.data.ias = ias;
-			this.data.result = {'x1':0,'y1':0,'x2':60,'y2':60,'width':60,'height':60};
+			this.data.result = {'x1':0,'y1':0,'x2':80,'y2':80,'width':80,'height':80};
 
 			//弹出框插件
 			var pop = $('#pop');
@@ -113,7 +126,7 @@
 			var data = img.src;
 			var num = data.indexOf('base64,');
 			var code = data.substring(num+7);
-			$.post('cropper.php',{code:code,dw:60,dh:60,x:x,y:y,w:w,h:h},function(data){
+			$.post('cropper.php',{code:code,dw:80,dh:80,x:x,y:y,w:w,h:h},function(data){
 				cb && cb('data:image/png;base64,'+data.code);
 			},'json');
 		}
@@ -161,7 +174,7 @@
 			}
 
 			//获取部门
-			var department = '部门：'+$('#department').val();
+			var department = $('#department').val();
 
 			//获取固定电话
 			var tel = $('#tel').val();
@@ -186,13 +199,13 @@
 			}
 
 			//设置地址
-			var address = '地址：杭州市余杭区文一西路969号淘宝城2号楼4楼';
+			var address = '地址：杭州市文一西路969号阿里巴巴西溪园区2号楼4楼';
 
 			//设置网站
 			var site = '网站：http://daxue.taobao.com'
 
 			//绘制
-			//isOk = 1;//调试代码
+			isOk = 1;//调试代码
 			if(isOk){
 				make({
 					image:imgAvatar,

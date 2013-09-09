@@ -41,19 +41,19 @@
 				</div>
 				<div class="span10 control-group">		
 					<select id="department">
-						<option>淘宝大学</option>
+						<!--<option>淘宝大学</option>
 						<option>淘宝大学-产品部</option>
 						<option>淘宝大学-大客户部</option>
 						<option>淘宝大学-渠道部</option>
 						<option>淘宝大学-运营部</option>
 						<option>淘宝大学-运营部-学员关系</option>
-						<option>淘宝大学-运营部-活动营销</option>
+						<option>淘宝大学-运营部-活动营销</option>-->
 						<option>淘宝大学-线上培训中心</option>
 						<option>淘宝大学-线上培训中心-点播课程</option>
 						<option>淘宝大学-线上培训中心-直播课程</option>
 						<option>淘宝大学-线上培训中心-淘工作</option>
 						<option>淘宝大学-线上培训中心-网站产品</option>
-						<option>淘宝大学-线上培训中心-用户体验</option>
+						<option selected>淘宝大学-线上培训中心-用户体验</option>
 					</select>
 					<span class="help-inline"></span>
 				</div>
@@ -63,7 +63,7 @@
 					Step4.填写座机
 				</div>
 				<div class="span10 control-group">		
-					<input type="text" placeholder="座机号码（可不填）" id="tel">
+					<input type="text" placeholder="座机号码（可不填）" id="tel" value="0571-85022088">
 					<input type="text" placeholder="分机号码" id="telsub">
 					<span class="help-inline"></span>
 				</div>
