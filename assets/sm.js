@@ -2,7 +2,7 @@
 
 	var fontZhonghei = new Font('assets/zhonghei.ttf','FZZH');
 	var fontZhunhei = new Font('assets/zhunhei.ttf','FZZHH');
-	painterSM = new Painter('sm',{width:650,height:125});
+	var painterSM = new Painter('sm',{width:650,height:125});
 
 	var make = function(info){
 		

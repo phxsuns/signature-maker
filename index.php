@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Signature-Maker</title>
+		<title>淘大邮件签名工具</title>
 		<link type="text/css" rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="assets/imageareaselect/css/imgareaselect-animated.css" />
 		<link type="text/css" rel="stylesheet" href="assets/sm.css">
@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="container" id="makerbox">
-			<h2>邮件签名生成</h2>
+			<h2>邮件签名生成工具</h2>
 			<div class="row step1">
 				<div class="span2">
 					Step1.您的名字
@@ -48,12 +48,12 @@
 						<option>淘宝大学-运营部</option>
 						<option>淘宝大学-运营部-学员关系</option>
 						<option>淘宝大学-运营部-活动营销</option>
-						<option>淘宝大学-线上培训部</option>
-						<option>淘宝大学-线上培训部-点播课程</option>
-						<option>淘宝大学-线上培训部-直播课程</option>
-						<option>淘宝大学-线上培训部-淘工作</option>
-						<option>淘宝大学-线上培训部-网站产品</option>
-						<option>淘宝大学-线上培训部-用户体验</option>
+						<option>淘宝大学-线上培训中心</option>
+						<option>淘宝大学-线上培训中心-点播课程</option>
+						<option>淘宝大学-线上培训中心-直播课程</option>
+						<option>淘宝大学-线上培训中心-淘工作</option>
+						<option>淘宝大学-线上培训中心-网站产品</option>
+						<option>淘宝大学-线上培训中心-用户体验</option>
 					</select>
 					<span class="help-inline"></span>
 				</div>
