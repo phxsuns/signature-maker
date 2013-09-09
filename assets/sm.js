@@ -13,7 +13,10 @@
 		painterSM.add('Image',{image:info.image,width:80,height:80},{x:206,y:23},1);
 		painterSM.add('Image',{src:'assets/face-mask.png',width:80,height:80},{x:206,y:23},2);//圆形遮罩
 		//姓名
-		painterSM.add('Text',{text:info.name,color:'#5E6D81',size:22,bold:'',fontObj:fontZhunhei},{x:310,y:32},1);
+		painterSM.add('Text',{text:info.rname,color:'#5E6D81',size:22,bold:'',fontObj:fontZhunhei},{x:310,y:32},1);
+		
+		var rnameWidth = 23 * info.rname.length;
+		painterSM.add('Text',{text:info.fname,color:'#5E6D81',size:16,bold:'',fontObj:fontZhunhei},{x:310 + rnameWidth,y:38},1);
 		
 		//部门
 		painterSM.add('Text',{text:info.department,color:'#9EA7B3',size:13,fontObj:fontZhunhei},{x:310,y:62},1);
@@ -166,11 +169,14 @@
 			//获取名字
 			var rname = $('#rname').val();
 			var fname = $('#fname').val();
-			var name = rname;
-			name += fname ? '（'+fname+'）' : '';
+			//var name = rname;
+			//name += fname ? '（'+fname+'）' : '';
 			if(!rname){
 				tips.show($('.step1'),'真名一定要填写哦～');
 				isOk = false;
+			}
+			if(fname){
+				fname = '（'+fname+'）';
 			}
 
 			//获取部门
@@ -209,7 +215,8 @@
 			if(isOk){
 				make({
 					image:imgAvatar,
-					name:name,
+					rname:rname,
+					fname:fname,
 					department:department,
 					telphone:telphone,
 					phone:phone,

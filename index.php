@@ -41,16 +41,16 @@
 				</div>
 				<div class="span10 control-group">		
 					<select id="department">
-						<!--<option>淘宝大学</option>
+						<option>淘宝大学</option>
 						<option>淘宝大学-产品部</option>
 						<option>淘宝大学-大客户部</option>
 						<option>淘宝大学-渠道部</option>
 						<option>淘宝大学-运营部</option>
 						<option>淘宝大学-运营部-学员关系</option>
-						<option>淘宝大学-运营部-活动营销</option>-->
+						<option>淘宝大学-运营部-活动营销</option>
 						<option>淘宝大学-线上培训中心</option>
-						<option>淘宝大学-线上培训中心-点播课程</option>
-						<option>淘宝大学-线上培训中心-直播课程</option>
+						<option>淘宝大学-线上培训中心-点播</option>
+						<option>淘宝大学-线上培训中心-直播</option>
 						<option>淘宝大学-线上培训中心-淘工作</option>
 						<option>淘宝大学-线上培训中心-网站产品</option>
 						<option selected>淘宝大学-线上培训中心-用户体验</option>
