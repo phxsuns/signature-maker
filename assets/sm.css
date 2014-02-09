@@ -1,7 +1,7 @@
 html{
 	overflow-y:scroll;
 }
-body,button,input,select{
+body,button,input,select,h2{
 	font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .wrap{
@@ -19,6 +19,7 @@ body,button,input,select{
 }
 #make{
 	width: 100px;
+	margin-top: 15px;
 }
 
 .out{
@@ -27,6 +28,6 @@ body,button,input,select{
 }
 #down{
 	display:none;
-	width:100px;
+	width: 100px;
 	margin: 10px;
 }
