@@ -71,10 +71,11 @@
 
 			//获取部门
 			var department = $('#department').val();
-			if(!department || department.substr(-1,1) === '-'){
+			if(department.substr(-1,1) === '-'){
 				tips.show($('#department'));
 				isOk = false;
 			}
+			if(!department) department = '数字阅读事业部';
 
 			//获取职位
 			var title = $('#title').val();
