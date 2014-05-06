@@ -100,10 +100,11 @@
 
 			//获取固定电话
 			var telphone = $('#telphone').val();
-			if(!telphone.match(/^([0-9]|-)+$/) || telphone.length != 13){
+			if(!telphone.match(/^([0-9]|-)*$/) || (telphone.length != 13 && telphone.length != 0) ){
 				tips.show($('#telphone'));
 				isOk = false;
 			}
+			if(telphone == '') telphone = '暂无';
 
 			//绘制
 			//isOk = 1;//调试代码

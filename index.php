@@ -33,7 +33,7 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label" for="position">座位</label>
-							<input type="text" class="form-control" id="position" value="西溪园区 3-5-S-">
+							<input type="text" class="form-control" id="position" value="西溪园区 2-4-N-">
 						</div>
 						<div class="form-group">
 							<label class="control-label" for="mobile">手机号</label>
